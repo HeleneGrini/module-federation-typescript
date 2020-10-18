@@ -1,6 +1,11 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "bootstrap": "rm package-lock.json && npm i && npm run build",
+    "install": "lerna exec npm install",
+    "start": "lerna run --parallel start"
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
   },
