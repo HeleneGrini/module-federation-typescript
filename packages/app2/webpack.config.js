@@ -43,7 +43,7 @@ module.exports = {
       shared: ["react", "react-dom"],
       exposes: {
         "./App": "./src/App",
-        "./utils": "./src/App",
+        "./utils": "./src/utils",
       },
     }),
     new HtmlWebpackPlugin({
