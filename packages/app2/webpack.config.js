@@ -11,9 +11,9 @@ module.exports = {
     port: 3002,
     open: true,
   },
-  //   output: {
-  //     publicPath: "auto",
-  //   },
+  output: {
+    publicPath: "auto",
+  },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
@@ -39,7 +39,12 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "app2",
+      filename: "remoteEntry.js",
       shared: ["react", "react-dom"],
+      exposes: {
+        "./App": "./src/App",
+        "./utils": "./src/App",
+      },
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
